@@ -18,10 +18,13 @@ body {
     position: relative;
 }
 
+
 /* Top-left OneShot logo */
+
 body::before {
     content: "OneShots.";
     position: fixed;
+
     top: 25px;
     left: 30px;
 
@@ -32,10 +35,13 @@ body::before {
     color: white;
 }
 
+
 /* Red dot */
+
 body::after {
     content: "•";
     position: fixed;
+
     top: 22px;
     left: 101px;
 
@@ -43,26 +49,62 @@ body::after {
     font-size: 22px;
 }
 
+
 /* Main content */
+
 body > div {
     width: 90%;
     max-width: 900px;
 }
 
+
+/* Amazon code */
+
+#c {
+    display: inline-block;
+
+    margin-bottom: 30px;
+    padding: 10px 18px;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #ff3030;
+
+    border: 1px solid #ff3030;
+    border-radius: 8px;
+
+    background: rgba(255, 48, 48, 0.05);
+}
+
+
+/* Main heading */
+
 h1 {
     font-size: clamp(45px, 8vw, 90px);
     font-weight: 900;
+
     text-transform: uppercase;
     letter-spacing: -4px;
+
     margin-bottom: 15px;
 }
+
+
+/* Subtitle */
 
 h2 {
     font-size: clamp(18px, 3vw, 30px);
     font-weight: 500;
+
     color: #b5b5b5;
+
     margin-bottom: 35px;
 }
+
+
+/* Countdown */
 
 #getTime {
     display: block;
@@ -71,23 +113,33 @@ h2 {
     font-weight: 800;
 
     color: #ff3030;
+
     letter-spacing: -2px;
 
     text-shadow: 0 0 25px rgba(255, 40, 40, 0.25);
 }
 
+
 /* Bottom-right credit */
+
 body > div::after {
     content: "Made by Ishan";
+
     position: fixed;
+
     right: 30px;
     bottom: 25px;
 
     font-size: 14px;
     font-weight: 600;
+
     color: #777;
+
     letter-spacing: 0.5px;
 }
+
+
+/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -115,8 +167,28 @@ body > div::after {
         line-height: 1.2;
     }
 
+    #c {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
     body > div::after {
         right: 20px;
         bottom: 20px;
     }
+    #c {
+    display: none;
+    margin-bottom: 30px;
+    padding: 10px 18px;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #ff3030;
+    border: 1px solid #ff3030;
+    border-radius: 8px;
+
+    background: rgba(255, 48, 48, 0.05);
+}
 }
