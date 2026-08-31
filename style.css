@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #05070b;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    position: relative;
+}
+
+/* Top-left OneShot logo */
+body::before {
+    content: "OneShots.";
+    position: fixed;
+    top: 25px;
+    left: 30px;
+
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -1px;
+
+    color: white;
+}
+
+/* Red dot */
+body::after {
+    content: "•";
+    position: fixed;
+    top: 22px;
+    left: 101px;
+
+    color: #ff3030;
+    font-size: 22px;
+}
+
+/* Main content */
+body > div {
+    width: 90%;
+    max-width: 900px;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(18px, 3vw, 30px);
+    font-weight: 500;
+    color: #b5b5b5;
+    margin-bottom: 35px;
+}
+
+#getTime {
+    display: block;
+
+    font-size: clamp(35px, 7vw, 75px);
+    font-weight: 800;
+
+    color: #ff3030;
+    letter-spacing: -2px;
+
+    text-shadow: 0 0 25px rgba(255, 40, 40, 0.25);
+}
+
+/* Bottom-right credit */
+body > div::after {
+    content: "Made by Ishan";
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+
+    body::before {
+        top: 20px;
+        left: 20px;
+        font-size: 17px;
+    }
+
+    body::after {
+        top: 17px;
+        left: 83px;
+        font-size: 19px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        line-height: 1.3;
+    }
+
+    #getTime {
+        line-height: 1.2;
+    }
+
+    body > div::after {
+        right: 20px;
+        bottom: 20px;
+    }
+}
