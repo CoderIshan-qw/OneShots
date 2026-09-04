@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OneShots — your statistical life-expectancy countdown.">
+
     <title>OneShots | Your Life</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="home.css">
 </head>
 
-<body class="home-page">
+<body>
 
-    <header class="home-header">
-        <a class="logo" href="home.html" aria-label="OneShots home">
-            OneShot<span>s.</span>
-        </a>
+    <div class="page">
 
-        <nav>
-            <a href="#about">ABOUT</a>
-            <a href="#info">INFO</a>
-            <button class="country-btn" id="countryButton" type="button">
-                <span id="countryShort">COUNTRY</span>
+        <!-- NAVBAR -->
+        <nav class="navbar">
+
+            <div class="logo">
+                One<span>Shot.</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">WHY?</a>
+            </div>
+
+            <button class="logout-btn">
+                LOG OUT
             </button>
+
         </nav>
-    </header>
 
-    <main class="home-container">
 
-        <div class="eyebrow">YOUR LIFE.</div>
+        <!-- MAIN CONTENT -->
+        <main>
 
-        <h1>LIVE <span>IT.</span></h1>
+            <section class="hero">
 
-        <p class="subtitle">
-            Statistical life expectancy in
-            <strong id="countryName">your country</strong>.
-        </p>
+                <h1>
+                    YOUR LIFE.
+                    <span>LIVE IT.</span>
+                </h1>
 
-        <section class="countdown" aria-label="Estimated remaining time">
+                <p class="subtitle">
+                    Average life expectancy in <span id="country">your country</span>
+                </p>
 
-            <div class="time-box">
-                <div id="years">0</div>
-                <span>YEARS</span>
-            </div>
 
-            <div class="time-box">
-                <div id="months">0</div>
-                <span>MONTHS</span>
-            </div>
+                <!-- COUNTDOWN -->
+                <div class="countdown">
 
-            <div class="time-box">
-                <div id="days">0</div>
-                <span>DAYS</span>
-            </div>
+                    <div class="time-box">
+                        <span id="years">00</span>
+                        <small>YEARS</small>
+                    </div>
 
-            <div class="time-box">
-                <div id="hours">0</div>
-                <span>HOURS</span>
-            </div>
+                    <div class="time-box">
+                        <span id="months">00</span>
+                        <small>MONTHS</small>
+                    </div>
 
-            <div class="time-box">
-                <div id="minutes">0</div>
-                <span>MINUTES</span>
-            </div>
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <small>DAYS</small>
+                    </div>
 
-            <div class="time-box seconds-box">
-                <div id="seconds">0</div>
-                <span>SECONDS</span>
-            </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <small>HOURS</small>
+                    </div>
 
-        </section>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <small>MINUTES</small>
+                    </div>
 
-        <p class="slipping">
-            Every second is one second you don't get back.
-        </p>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <small>SECONDS</small>
+                    </div>
 
-        <section class="life-card" id="info">
-            <div class="card-label">AVERAGE LIFE EXPECTANCY</div>
+                </div>
 
-            <div class="life-number">
-                <span id="lifeExpectancy">0</span>
-                <small>Years</small>
-            </div>
 
-            <div class="card-line"></div>
+                <p class="slipping">
+                    Time is slipping.
+                </p>
 
-            <p>
-                Based on the country value used by this project.
-            </p>
-        </section>
 
-        <p class="welcome">
-            Welcome, <strong id="userName"></strong>.
-        </p>
+                <!-- LIFE EXPECTANCY CARD -->
+                <div class="life-card">
 
-        <p class="disclaimer" id="about">
-            This is a statistical visualization, not a prediction of an individual's lifespan.
-        </p>
+                    <p>Average Life Expectancy</p>
 
-    </main>
+                    <h2>
+                        <span id="lifeExpectancy">00.0</span> Years
+                    </h2>
 
-    <footer>
-        Made by Ishan
-    </footer>
+                    <small>
+                        Don't waste it.
+                    </small>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- BOTTOM PROGRESS -->
+        <div class="bottom-line"></div>
+
+    </div>
+
 
     <script src="home.js"></script>
+
 </body>
+
 </html>

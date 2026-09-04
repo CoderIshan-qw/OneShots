@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: #090909;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* MAIN WEBSITE */
+
+.page {
+    position: relative;
+
+    width: 100%;
+    max-width: 1100px;
+
+    min-height: 620px;
+
+    background: #050505;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 1px #151515,
+        0 20px 70px rgba(0, 0, 0, 0.7);
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 65px;
+
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #151515;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+.logo span {
+    color: #ff2b2b;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* LOGOUT */
+
+.logout-btn {
+    background: transparent;
+
+    border: 1px solid #292929;
+
+    color: #ddd;
+
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    border-color: #ff3030;
+
+    color: #ff3030;
+}
+
+
+/* HERO */
+
+.hero {
+    text-align: center;
+
+    padding-top: 60px;
+}
+
+
+/* MAIN HEADING */
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #ff2d2d;
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.subtitle span {
+    color: #ddd;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+    margin: 42px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: clamp(15px, 4vw, 55px);
+
+    padding: 0 20px;
+}
+
+
+/* TIME BOX */
+
+.time-box {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 80px;
+}
+
+
+/*
+    THESE ARE THE BIG NUMBERS
+*/
+
+.time-box span {
+    font-size: clamp(38px, 6vw, 72px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    color: #ff3030;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* WORDS UNDER NUMBERS */
+
+.time-box small {
+    margin-top: 12px;
+
+    font-size: 10px;
+
+    color: #666;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TIME IS SLIPPING */
+
+.slipping {
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* LIFE CARD */
+
+.life-card {
+    width: min(430px, 85%);
+
+    margin: 35px auto 0;
+
+    padding: 24px 20px;
+
+    background: #101010;
+
+    border: 1px solid #1d1d1d;
+
+    border-radius: 12px;
+}
+
+.life-card p {
+    color: #aaa;
+
+    font-size: 11px;
+
+    margin-bottom: 8px;
+}
+
+.life-card h2 {
+    font-size: 30px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.life-card h2 span {
+    color: white;
+}
+
+.life-card small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+
+/* BOTTOM RED LINE */
+
+.bottom-line {
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #ff2850;
+}
+
+
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .page {
+        min-height: 100vh;
+
+        border-radius: 0;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .countdown {
+        gap: 20px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        align-items: stretch;
+    }
+
+    .page {
+        min-height: 100vh;
+
+        border-radius: 0;
+    }
+
+    .navbar {
+        height: 60px;
+
+        padding: 0 18px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2.5px;
+    }
+
+    .subtitle {
+        padding: 0 20px;
+
+        line-height: 1.5;
+    }
+
+    .countdown {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 28px 8px;
+
+        margin-top: 40px;
+    }
+
+    .time-box {
+        min-width: 0;
+    }
+
+    .time-box span {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .time-box small {
+        font-size: 8px;
+
+        margin-top: 8px;
+    }
+
+    .life-card {
+        margin-top: 40px;
+    }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .time-box span {
+        font-size: 35px;
+    }
+
+}
