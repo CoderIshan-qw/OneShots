@@ -1,92 +1,113 @@
-let data;
+let data = null;
+
+const countrySelector = document.getElementById("getC");
+const signupForm = document.getElementById("signupForm");
+const continueBtn = document.getElementById("continueBtn");
 
 async function load() {
+    try {
+        const response = await fetch("countries.json");
 
-    let response = await fetch("countries.json");
+        if (!response.ok) {
+            throw new Error("Could not load countries.json");
+        }
 
-    data = await response.json();
+        data = await response.json();
 
-    let countrySelector = document.getElementById("getC");
+        countrySelector.innerHTML =
+            '<option value="">Select your country</option>';
 
-    for (let country in data) {
+        for (const country in data) {
+            const option = document.createElement("option");
 
-        let option = document.createElement("option");
+            option.value = country;
+            option.textContent = country;
 
-        option.value = country;
-        option.textContent = country;
+            countrySelector.appendChild(option);
+        }
 
-        countrySelector.appendChild(option);
+        continueBtn.disabled = false;
+
+    } catch (error) {
+        console.error(error);
+
+        countrySelector.innerHTML =
+            '<option value="">Could not load countries</option>';
+
+        continueBtn.disabled = true;
     }
 }
 
+function isValidDob(dob) {
+    if (
+        dob.length !== 10 ||
+        dob[2] !== "/" ||
+        dob[5] !== "/"
+    ) {
+        return false;
+    }
 
-load();
+    const [day, month, year] = dob.split("/").map(Number);
 
+    if (
+        !Number.isInteger(day) ||
+        !Number.isInteger(month) ||
+        !Number.isInteger(year)
+    ) {
+        return false;
+    }
 
-async function sub() {
+    if (year < 1900 || year > new Date().getFullYear()) {
+        return false;
+    }
 
-    // Make sure the JSON has loaded
+    const date = new Date(year, month - 1, day);
+
+    return (
+        date.getFullYear() === year &&
+        date.getMonth() === month - 1 &&
+        date.getDate() === day
+    );
+}
+
+async function sub(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
     if (!data) {
         await load();
     }
 
-    let name = document.getElementById("getName").value.trim();
+    const name = document.getElementById("getName").value.trim();
+    const dob = document.getElementById("getDob").value.trim();
+    const country = countrySelector.value;
 
-    let dob = document.getElementById("getDob").value.trim();
-
-    let country = document.getElementById("getC").value;
-
-
-    // Check empty fields first
     if (name === "" || dob === "" || country === "") {
-
-        alert("Please fill all details");
-
+        alert("Please fill all details.");
         return;
     }
 
-
-    // Check DOB format
-    if (
-        dob.length !== 10 ||
-        dob[2] !== "/" ||
-        dob[5] !== "/" ||
-        isNaN(dob[0]) ||
-        isNaN(dob[1]) ||
-        isNaN(dob[3]) ||
-        isNaN(dob[4]) ||
-        isNaN(dob[6]) ||
-        isNaN(dob[7]) ||
-        isNaN(dob[8]) ||
-        isNaN(dob[9])
-    ) {
-
-        alert("Please enter DOB in DD/MM/YYYY format");
-
+    if (!isValidDob(dob)) {
+        alert("Please enter a valid DOB in DD/MM/YYYY format.");
         return;
     }
 
+    const countryValue = data[country];
 
-    // Get country's life expectancy
-    let country_value = data[country];
+    if (countryValue === undefined) {
+        alert("Could not find life expectancy for this country.");
+        return;
+    }
 
-
-    console.log("Name:", name);
-    console.log("DOB:", dob);
-    console.log("Country:", country);
-    console.log("Life expectancy:", country_value);
-
-
-    // Store data
     localStorage.setItem("Name", name);
-
     localStorage.setItem("DOB", dob);
-
     localStorage.setItem("Country", country);
+    localStorage.setItem("CountryValue", countryValue);
 
-    localStorage.setItem("CountryValue", country_value);
-
-
-    // Go to home
     window.location.href = "home.html";
 }
+
+signupForm.addEventListener("submit", sub);
+
+load();

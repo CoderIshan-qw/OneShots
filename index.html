@@ -1,60 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>OneShots | Sign Up</title>
-
+    <meta name="description" content="OneShots — make your time count.">
+    <title>OneShots | Start</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="signup-page">
 
-    <header>
-        <div class="logo">
+    <header class="site-header">
+        <a class="logo" href="index.html" aria-label="OneShots home">
             OneShot<span>s.</span>
-        </div>
+        </a>
+        <div class="header-tag">MAKE IT COUNT.</div>
     </header>
 
     <main class="signup-container">
 
-        <h1>YOUR LIFE.<br><span>START IT.</span></h1>
+        <div class="eyebrow">YOUR TIME IS LIMITED.</div>
+
+        <h1>
+            YOUR LIFE.<br>
+            <span>LIVE IT.</span>
+        </h1>
 
         <p class="signup-subtitle">
-            Enter your details to calculate your life countdown.
+            Enter a few details to create your personal
+            <strong>statistical life-expectancy countdown.</strong>
         </p>
 
-        <div class="form-card">
+        <form class="form-card" id="signupForm">
 
-            <label for="getName">Name</label>
-            <input
-                id="getName"
-                type="text"
-                placeholder="Enter your name"
-            >
+            <div class="field">
+                <label for="getName">Name</label>
+                <input
+                    id="getName"
+                    type="text"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    maxlength="60"
+                    required
+                >
+            </div>
 
-            <label for="getDob">Date of Birth</label>
-            <input
-                id="getDob"
-                type="text"
-                placeholder="DD/MM/YYYY"
-                maxlength="10"
-            >
+            <div class="field">
+                <label for="getDob">Date of Birth</label>
+                <input
+                    id="getDob"
+                    type="text"
+                    placeholder="DD/MM/YYYY"
+                    inputmode="numeric"
+                    maxlength="10"
+                    autocomplete="bday"
+                    required
+                >
+                <small>Use DD/MM/YYYY</small>
+            </div>
 
-            <label for="getC">Country</label>
-            <select id="getC">
-                <option value="">Select your country</option>
-            </select>
+            <div class="field">
+                <label for="getC">Country</label>
+                <select id="getC" required>
+                    <option value="">Loading countries...</option>
+                </select>
+            </div>
 
-            <button onclick="sub()">CONTINUE</button>
+            <button id="continueBtn" type="submit">
+                <span>SEE MY COUNTDOWN</span>
+                <span class="arrow">→</span>
+            </button>
 
+            <p class="form-note">
+                Your details are stored locally in your browser.
+            </p>
+
+        </form>
+
+        <div class="scroll-hint">
+            <span></span>
+            START WITH ONE SECOND.
         </div>
 
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <span>OneShots.</span> Made to remind you that time matters.
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
