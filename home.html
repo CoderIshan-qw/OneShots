@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OneShots | Your Life</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+    <!-- HEADER -->
+
+    <header class="home-header">
+
+        <div class="logo">
+            OneShot<span>s.</span>
+        </div>
+
+        <nav>
+            <a href="#">ABOUT</a>
+            <a href="#">INFO</a>
+            <button class="country-btn" id="countryButton">
+                COUNTRY
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="home-container">
+
+        <p class="small-title">
+            YOUR LIFE.
+        </p>
+
+        <h1>
+            LIVE <span>IT.</span>
+        </h1>
+
+        <p class="subtitle">
+            Average life expectancy in <span id="countryName">your country</span>.
+        </p>
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <div id="years">0</div>
+                <span>YEARS</span>
+            </div>
+
+            <div class="time-box">
+                <div id="months">0</div>
+                <span>MONTHS</span>
+            </div>
+
+            <div class="time-box">
+                <div id="days">0</div>
+                <span>DAYS</span>
+            </div>
+
+            <div class="time-box">
+                <div id="hours">0</div>
+                <span>HOURS</span>
+            </div>
+
+            <div class="time-box">
+                <div id="minutes">0</div>
+                <span>MINUTES</span>
+            </div>
+
+            <div class="time-box seconds-box">
+                <div id="seconds">0</div>
+                <span>SECONDS</span>
+            </div>
+
+        </div>
+
+
+        <p class="slipping">
+            Time is slipping. ⏳
+        </p>
+
+
+        <!-- LIFE EXPECTANCY CARD -->
+
+        <div class="life-card">
+
+            <p>AVERAGE LIFE EXPECTANCY</p>
+
+            <h2>
+                <span id="lifeExpectancy">0</span>
+                Years
+            </h2>
+
+            <small>
+                Don't waste it.
+            </small>
+
+        </div>
+
+
+        <p class="welcome">
+            Welcome, <span id="userName"></span>.
+        </p>
+
+    </main>
+
+
+    <footer>
+        Made by Ishan
+    </footer>
+
+
+    <script src="home.js"></script>
+
+</body>
+</html>
