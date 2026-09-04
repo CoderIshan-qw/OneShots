@@ -11,56 +11,42 @@
 <body class="signup-page">
 
     <header class="site-header">
-        <a class="logo" href="index.html" aria-label="OneShots home">
-            OneShot<span>s.</span>
-        </a>
-        <div class="header-tag">MAKE IT COUNT.</div>
+        <a class="logo" href="index.html">OneShot<span>s.</span></a>
+        <span class="header-note">MAKE IT COUNT.</span>
     </header>
 
     <main class="signup-container">
 
         <div class="eyebrow">YOUR TIME IS LIMITED.</div>
 
-        <h1>
-            YOUR LIFE.<br>
-            <span>LIVE IT.</span>
-        </h1>
+        <h1>YOUR LIFE.<br><span>LIVE IT.</span></h1>
 
         <p class="signup-subtitle">
-            Enter a few details to create your personal
-            <strong>statistical life-expectancy countdown.</strong>
+            Create your personal statistical life-expectancy countdown.
         </p>
 
         <form class="form-card" id="signupForm">
 
             <div class="field">
-                <label for="getName">Name</label>
-                <input
-                    id="getName"
-                    type="text"
-                    placeholder="Your name"
-                    autocomplete="name"
-                    maxlength="60"
-                    required
-                >
+                <label for="getName">NAME</label>
+                <input id="getName" type="text"
+                       placeholder="Enter your name"
+                       autocomplete="name" maxlength="60" required>
             </div>
 
             <div class="field">
-                <label for="getDob">Date of Birth</label>
-                <input
-                    id="getDob"
-                    type="text"
-                    placeholder="DD/MM/YYYY"
-                    inputmode="numeric"
-                    maxlength="10"
-                    autocomplete="bday"
-                    required
-                >
-                <small>Use DD/MM/YYYY</small>
+                <label for="getDob">DATE OF BIRTH</label>
+                <input id="getDob" type="text"
+                       placeholder="DD/MM/YYYY"
+                       inputmode="numeric"
+                       maxlength="10"
+                       autocomplete="bday"
+                       required>
+                <span class="field-hint">DD / MM / YYYY</span>
             </div>
 
             <div class="field">
-                <label for="getC">Country</label>
+                <label for="getC">COUNTRY</label>
                 <select id="getC" required>
                     <option value="">Loading countries...</option>
                 </select>
@@ -68,24 +54,23 @@
 
             <button id="continueBtn" type="submit">
                 <span>SEE MY COUNTDOWN</span>
-                <span class="arrow">→</span>
+                <b>→</b>
             </button>
 
-            <p class="form-note">
-                Your details are stored locally in your browser.
-            </p>
-
+            <div class="privacy-note">
+                Your details stay in your browser.
+            </div>
         </form>
 
-        <div class="scroll-hint">
-            <span></span>
+        <div class="bottom-hint">
+            <i></i>
             START WITH ONE SECOND.
         </div>
 
     </main>
 
     <footer>
-        <span>OneShots.</span> Made to remind you that time matters.
+        OneShots<span>.</span> &nbsp;•&nbsp; Make every second count.
     </footer>
 
     <script src="script.js"></script>
